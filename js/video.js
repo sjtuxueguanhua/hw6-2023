@@ -9,8 +9,9 @@ window.addEventListener("load", function() {
 document.querySelector("#play").addEventListener("click", function() {
 	console.log("Play Video");
 	video.play();
-
-	volumeText.innerHTML = (video.volume * 100) + '%';
+	var volume = document.querySelector("#slider").value / 100;
+    video.volume = volume;
+    document.querySelector("#volume").innerText = Math.round(volume * 100) + "%";
 });
 
 // Pause Button - Pause the video.
